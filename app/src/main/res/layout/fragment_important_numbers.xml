@@ -1,0 +1,45 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:id="@+id/swipe_refresh_layout_im_contact"
+    tools:context="com.infoservices.lue.fragments.ImportantNumbersFragment">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".1"
+        android:textColor="@android:color/white"
+        android:text="MANAGEMENT OFFICE"
+        android:textSize="17dp"
+        android:gravity="center"/>
+    <ListView
+        android:id="@+id/list_contact1"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimaryLight"
+        android:layout_height="0dp"
+        android:layout_weight=".4"
+        >
+    </ListView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".1"
+        android:textColor="@android:color/white"
+        android:text="OTHER IMPORTANT NUMBERS"
+        android:textSize="17dp"
+        android:gravity="center"/>
+    <ListView
+        android:id="@+id/list_contact2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryLight"
+        android:layout_weight=".4"
+        ></ListView>
+</LinearLayout>
+
+

@@ -1,0 +1,116 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.infoservices.lue.condomanagement.LoginActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Log in"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+   <EditText
+       android:id="@+id/user_name"
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:hint="  username"
+       android:background="@drawable/rectengleshape"
+       android:drawableLeft="@drawable/loginusericon"
+       android:paddingLeft="10dp"
+       android:paddingRight="50dp"
+       android:textColor="@color/green"
+       android:textColorHint="@android:color/white"/>
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:drawableLeft="@drawable/loginpasswordicon"
+            android:background="@drawable/rectengleshape"
+            android:hint=" password"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="50dp"
+            android:inputType="textPassword"
+            android:textColor="@color/green"
+            android:textColorHint="@android:color/white"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/check_show_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="Show Password"
+            android:textColor="@android:color/white"
+            android:buttonTint="@android:color/white"
+            />
+        <CheckBox
+            android:id="@+id/check_remember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="Remember me"
+            android:textColor="@android:color/white"
+            android:buttonTint="@android:color/white"
+            />
+</RelativeLayout>
+        <Button
+           android:id="@+id/button_login"
+           android:layout_width="match_parent"
+           android:layout_height="40dp"
+           android:layout_marginTop="10dp"
+           android:background="@drawable/blue_button"
+           android:textColor="@android:color/white"
+           android:text="Login"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@android:color/white"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"
+                android:text="New to CondoAssist?"
+                android:gravity="center"
+                android:textColor="@android:color/white"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_gravity="center"
+                android:layout_height="1dp"
+                android:background="@android:color/white"/>
+
+            </LinearLayout>
+        <Button
+            android:id="@+id/button_signup"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/green_button"
+            android:textColor="@android:color/black"
+            android:text="Sign Up"/>
+    </LinearLayout>
+</RelativeLayout>

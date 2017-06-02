@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context="com.infoservices.lue.fragments.RulesAndRegFragment">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:textColor="@android:color/white"
+    android:text="
+    "
+    android:gravity="center"
+    android:textSize="18sp"
+
+    />
+
+    <TextView
+        android:id="@+id/terms_of_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:textColor="@android:color/white"
+        android:text="Terms and condition of use shown here(in after Refered to as the Term and conditions)see from the terms between ENGAGEDOTS"
+        android:background="@color/colorPrimaryLight"
+        android:textSize="12sp"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textColor="@android:color/white"
+        android:text="RECENT"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textSize="18sp"
+
+        />
+
+    <TextView
+        android:id="@+id/recent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:visibility="gone"
+        android:textColor="@android:color/white"
+        android:text="Privacy Policy of use shown here (in after referred to as the Terms and Conditions) see from the terms between ENGAGEDOTS will handle all user information concerned with the company ENGAGEDO services and all its related"
+        android:background="@color/colorPrimaryLight"
+        android:gravity="center"
+        android:textSize="12sp"
+
+        />
+</LinearLayout>

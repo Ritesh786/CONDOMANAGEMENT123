@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="@color/caldroid_white"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Deals"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/redeem_txtavailablecredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/primary_button"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="@string/available_credits"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_layout"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="5dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/deal_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:padding="10dp"
+                    android:background="@color/colorPrimary"
+                    android:text="10% breakfast set @ Bellagio Cafe"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:textColor="#ffffff" />
+                <ImageView
+                    android:id="@+id/imgredeem"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/hotel" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal" >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight=".2"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity=""
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:textColor="@color/caldroid_white"
+                        android:text="Discount"
+                        />
+                    <TextView
+                        android:id="@+id/discount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity=""
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/holo_orange_light"
+                        android:text="0"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight=".2"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:textColor="@color/caldroid_white"
+                        android:text="Credits"/>
+                    <TextView
+                        android:id="@+id/credits"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@android:color/holo_orange_light"
+                        android:text="0"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight=".2"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:textColor="@color/caldroid_white"
+                        android:text="Rewards"
+                        />
+                    <TextView
+                        android:id="@+id/rewards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@android:color/holo_orange_light"
+                        android:text="0"
+                        />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight=".4"
+                        android:layout_height="?attr/actionBarSize"
+                        android:orientation="horizontal"
+                        android:paddingTop="10dp" >
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/timec"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="10dp"
+                            android:textColor="@color/caldroid_white"
+                            android:text="@string/time_left" />
+
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="@android:color/holo_orange_light"
+                            android:textSize="15sp"
+                            android:text="23:13:55"/>
+                        </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/caldroid_gray"
+            android:orientation="vertical" >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/caldroid_black"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:text="@string/share" />
+
+                <TextView
+                    android:id="@+id/txtfb"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/fbc"
+                    android:clickable="true"
+                    android:onClick="fb_click" />
+
+                <TextView
+                    android:id="@+id/txttwitter"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/twic"
+                    android:clickable="true"
+                    android:onClick="twitter_click" />
+
+                <TextView
+                    android:id="@+id/txtgoogle"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/gooc"
+                    android:clickable="true"
+                    android:onClick="google_click" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/redeemnow_btn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/primary_light_button"
+                android:gravity="center"
+                android:text="@string/redeem_now"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/txtdes"
+                    android:layout_width="0dp"
+                    android:layout_weight=".33"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:onClick="descrip_click"
+                    android:text="@string/description"
+                    android:background="@android:color/white"
+                    android:textSize="13dp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/txtterms"
+                    android:layout_width="0dp"
+                    android:layout_weight=".33"
+                    android:layout_height="match_parent"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:onClick="terms_click"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textSize="13dp"
+                    android:text="@string/hightlights"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/tterms"
+                    android:layout_width="0dp"
+                    android:layout_weight=".33"
+                    android:layout_height="match_parent"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:onClick="termscondition_click"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/terms_condition"
+                    android:textColor="#000000"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <WebView
+                android:id="@+id/showdesandterms"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/white"
+                android:text="@string/location" />
+
+            <FrameLayout
+                android:id="@+id/store_map_linear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/fragment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                </android.support.v4.view.ViewPager>
+
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white" >
+                    <fragment
+                        android:id="@+id/map"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dip"
+                        class="com.google.android.gms.maps.SupportMapFragment"/>
+
+                </FrameLayout>
+            </FrameLayout>
+            <!--
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <fragment
+                    android:id="@+id/map1"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    class="com.google.android.gms.maps.SupportMapFragment" />
+
+
+                     <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="#FFFFFFFF" />
+
+            </FrameLayout>
+            -->
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

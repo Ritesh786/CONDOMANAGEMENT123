@@ -1,0 +1,59 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@android:color/black"
+             tools:context="com.infoservices.lue.fragments.PagerItemFragment">
+
+   <ImageView
+       android:id="@+id/pager_imgs"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:scaleType="fitXY"
+       android:src="@drawable/lobo2"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical">
+   <TextView
+       android:id="@+id/item_det"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="10dp"
+       android:textStyle="normal"
+       android:textColor="@android:color/white"
+       android:text=""
+       android:gravity="left"
+       android:textSize="17dp"/>
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+      <TextView
+          android:id="@+id/by"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:layout_marginLeft="5dp"
+          android:textStyle="normal"
+          android:textColor="@color/green"
+          android:text=""
+          android:gravity="left"
+          android:textSize="12dp"/>
+      <TextView
+          android:id="@+id/timing2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:textStyle="normal"
+          android:layout_marginRight="5dp"
+          android:layout_alignParentRight="true"
+          android:textColor="@color/green"
+          android:text=""
+          android:gravity="left"
+          android:textSize="12dp"/>
+</RelativeLayout>
+</LinearLayout>
+</FrameLayout>

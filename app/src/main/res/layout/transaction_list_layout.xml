@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="70dp"
+    android:layout_margin="3dp"
+    android:background="@android:color/white"
+    android:orientation="horizontal" >
+
+       <TextView 
+            android:id="@+id/transaction_time_txt"
+            android:layout_height="50dp"
+            android:layout_width="fill_parent"
+            android:hint="@string/purchase"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="3dp"
+            android:textSize="11sp"
+            android:paddingBottom="3dp"
+            android:layout_weight=".015"/>
+       <TextView
+            android:id="@+id/transaction_myr_txt"
+            android:layout_height="50dp"
+            android:layout_width="fill_parent"
+            android:hint="@string/credits"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:textSize="11sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight=".02"/>
+       <TextView
+            android:id="@+id/transaction_credits_txt" 
+            android:layout_height="50dp"
+            android:layout_width="fill_parent"
+            android:hint="@string/coupon_qty"
+            android:paddingTop="3dp"
+            android:textSize="11sp"
+            android:paddingBottom="3dp"
+            android:layout_weight=".02"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+       <TextView
+            android:id="@+id/transaction_id_txt"
+            android:layout_height="50dp"
+            android:layout_width="fill_parent"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:textSize="11sp"
+            android:hint="@string/total_credits"
+            android:layout_weight=".02"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+
+</LinearLayout>

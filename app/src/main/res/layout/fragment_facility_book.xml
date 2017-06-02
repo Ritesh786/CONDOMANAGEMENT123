@@ -1,0 +1,178 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.infoservices.lue.fragments.FcilityBookingFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@color/colorPrimaryLight"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+            <ImageView
+                android:id="@+id/mph_img"
+                android:layout_width="0dp"
+                android:layout_weight=".4"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/lobo2"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_weight=".6">
+                <TextView
+                    android:id="@+id/mph_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RM 50/HOUR"
+                    android:textColor="@android:color/white"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="17dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rate"
+                    android:textColor="@color/green"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="12sp"/>
+                <TextView
+                    android:id="@+id/mph_notice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1 MONTH ADVANCE"
+                    android:textColor="@android:color/white"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="17dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Booking Notice"
+                    android:textColor="@color/green"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="5dp"
+            android:background="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:id="@+id/mph_full_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:hint="Full Name"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:textColor="@color/green"
+            android:paddingRight="20dp"
+            android:textColorHint="@android:color/white"
+            android:background="@drawable/rectangleshape_white"/>
+
+        <TextView
+            android:id="@+id/mph_unit_no"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:hint="Unit No."
+            android:gravity="center_vertical"
+            android:textColor="@color/green"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColorHint="@android:color/white"
+            android:background="@drawable/rectangleshape_white"/>
+        <TextView
+            android:id="@+id/mph_time"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:hint="-- Select From Time --"
+            android:textColor="@color/green"
+            android:textSize="15sp"
+            android:textColorHint="@android:color/white"
+            android:background="@drawable/rectangleshape_white"/>
+        <TextView
+            android:id="@+id/mph_time2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:hint="-- Select To Time --"
+            android:textColor="@color/green"
+            android:textSize="15sp"
+            android:textColorHint="@android:color/white"
+            android:background="@drawable/rectangleshape_white"/>
+        <TextView
+            android:id="@+id/mph_date"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:hint="-- Select Date --"
+            android:textSize="15sp"
+            android:textColor="@color/green"
+            android:textColorHint="@android:color/white"
+            android:background="@drawable/rectangleshape_white"/>
+        <LinearLayout
+            android:id="@+id/ll_mph_process"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="7dp"
+            android:orientation="horizontal">
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="5dip"
+                android:indeterminateDrawable="@drawable/myprocess"
+                android:visibility="visible" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Checking for Availability"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="20dp"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:text="BOOKING"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/mph_make_payment"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/yellow_button"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:text="BOOK NOW"
+        android:layout_alignParentBottom="true"/>
+</LinearLayout>
+
+
+</ScrollView>

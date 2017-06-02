@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                              xmlns:tools="http://schemas.android.com/tools"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="match_parent"
+                                              android:background="@color/colorPrimary"
+                                              android:orientation="vertical"
+                                              android:id="@+id/swipe_refresh_layout_calender"
+                                              tools:context="com.infoservices.lue.fragments.CalenderFragment">
+
+
+<LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/colorPrimary"
+              android:orientation="vertical"
+
+              >
+
+   <FrameLayout
+       android:id="@+id/cal_fra"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       ></FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/text_month2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="August"
+            android:visibility="gone"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textSize="50sp"
+            android:textColor="@color/mdtp_white"/>
+        <TextView
+            android:id="@+id/text_year2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2016"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/mdtp_white"/>
+        <Button
+            android:id="@+id/add_event2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginRight="130dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/green_button"
+            android:text="Add Event"/>
+    </LinearLayout>
+</LinearLayout>
+    </LinearLayout>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/caldroid_gray"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark" >
+        <ImageView
+            android:id="@+id/back_radee_lay"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingRight="18dp"
+            android:text="@string/redeemnow"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/redeennow_usercredits_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/primary_button"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/available_credits"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/welcome_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:hint="@string/welcome"
+            android:textColorHint="#000000"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/redeemnow_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.02"
+            android:text="Denial"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:gravity="right"
+            android:layout_weight="0.02"
+            android:text="@string/rewardpoints"
+            android:textColor="@android:color/black"
+            />
+        <TextView
+            android:id="@+id/reward_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@android:color/holo_orange_dark"
+            android:text="0" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/deal_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:paddingTop="5dp"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal" >
+
+        <!--
+             <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight=".01"
+            android:hint="@string/purchase"
+            android:textColor="#FFFFFF" />
+        -->
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".01"
+            android:gravity="center"
+            android:text="@string/credits"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".01"
+            android:gravity="center"
+            android:text="@string/coupon_qty"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".01"
+            android:gravity="center"
+            android:text="@string/total_credits"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/caldroid_white"
+        android:orientation="horizontal" >
+
+        <!--
+             <TextView
+            android:id="@+id/deal_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".01"
+            android:paddingLeft="2dp"
+            android:paddingBottom="2dp"
+            android:gravity="center"
+            android:textColor="#0000ff" />
+        -->
+
+        <TextView
+            android:id="@+id/credits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:padding="40dp"
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/darker_gray"
+            android:layout_weight=".01"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="0"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_right"
+            android:layout_centerInParent="true">
+        <ImageView
+            android:id="@+id/minus"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:src="@drawable/minus"
+            android:layout_gravity="center_vertical"
+            />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/black"/>
+        <TextView
+            android:id="@+id/redeem_now_qty_edt"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/black"/>
+            <ImageView
+                android:id="@+id/plus"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:src="@drawable/plus"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/total_crdts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="40dp"
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/darker_gray"
+            android:layout_weight=".01"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="0"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/redeemnow_print"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/primary_button"
+        android:text="@string/print"
+        android:textColor="#ffffff"
+        />
+
+    <Button
+        android:id="@+id/redeemnow_cancel"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/gray_button"
+        android:text="@string/cancel"
+        android:textColor="@color/caldroid_white"
+         />
+
+</LinearLayout>

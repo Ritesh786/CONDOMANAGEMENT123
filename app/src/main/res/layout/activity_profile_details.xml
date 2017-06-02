@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    tools:context="com.infoservices.lue.dealAndDiscount.ProfileDetails">
+
+    <LinearLayout
+        android:id="@+id/rltop"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:id="@+id/menu_lin_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:gravity="center|left"
+
+            android:orientation="vertical"
+
+
+
+            >
+            <ImageView
+                android:id="@+id/imageViewleft"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="11dp"
+                android:src="@drawable/back"
+                android:visibility="visible"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+            <TextView
+
+                android:id="@+id/textView_hometitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/edit_profile"
+                android:textColor="@color/caldroid_white"
+                android:textSize="@dimen/text_size_for_headings"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearlayout_save"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:gravity="center"
+
+            android:orientation="vertical"
+            >
+            <TextView
+
+                android:id="@+id/editProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:text="@string/edit"
+
+                android:textColor="@color/caldroid_white"
+                android:textSize="@dimen/text_size_for_button"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rltop"
+        android:orientation="vertical"
+       >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstLayout"
+        android:background="@color/caldroid_white"
+        android:orientation="horizontal"
+
+
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/firstname"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text="@string/first_name"/>
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.4"
+            android:gravity="center_horizontal"
+            android:text=":"/>
+
+        <TextView
+            android:id="@+id/firstnamevalue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text=""/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstLayout"
+        android:id="@+id/lastLayout"
+        android:background="@color/caldroid_white"
+        android:orientation="horizontal"
+
+
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lastname"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text="@string/last_name"/>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.4"
+            android:gravity="center_horizontal"
+            android:text=":"/>
+        <TextView
+            android:id="@+id/lastnamevalue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text=""/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/caldroid_white"
+        android:orientation="horizontal"
+        android:layout_below="@+id/lastLayout"
+        android:id="@+id/emailLayout"
+
+
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailID"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text="@string/email_id"/>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.4"
+            android:gravity="center_horizontal"
+            android:text=":"/>
+        <TextView
+            android:id="@+id/email_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text=""/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/caldroid_white"
+        android:layout_below="@+id/emailLayout"
+        android:id="@+id/mobileLayout"
+        android:orientation="horizontal"
+
+
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text="@string/mobile"/>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.4"
+            android:gravity="center_horizontal"
+            android:text=":"/>
+        <TextView
+            android:id="@+id/mobile_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text=""/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mobileLayout"
+        android:id="@+id/address1Layout"
+        android:background="@color/caldroid_white"
+        android:orientation="horizontal"
+
+
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text="@string/address1"/>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.4"
+            android:gravity="center_horizontal"
+            android:text=":"/>
+        <TextView
+            android:id="@+id/address1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text=""/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/caldroid_white"
+        android:orientation="horizontal"
+        android:layout_below="@+id/address1Layout"
+        android:id="@+id/address2Layout"
+
+
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text="@string/address_2"/>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.4"
+            android:gravity="center_horizontal"
+            android:text=":"/>
+        <TextView
+            android:id="@+id/address2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text=""/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/caldroid_white"
+        android:orientation="horizontal"
+        android:layout_below="@+id/address2Layout"
+        android:id="@+id/countryLayout"
+
+
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text="@string/country"/>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.4"
+            android:gravity="center_horizontal"
+            android:text=":"/>
+        <TextView
+            android:id="@+id/country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text=""/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/caldroid_white"
+        android:layout_below="@+id/countryLayout"
+        android:id="@+id/cityLayout"
+        android:orientation="horizontal"
+
+
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text="@string/city"/>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.4"
+            android:gravity="center_horizontal"
+            android:text=":"/>
+        <TextView
+            android:id="@+id/city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text=""/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/caldroid_white"
+        android:orientation="horizontal"
+        android:layout_below="@+id/cityLayout"
+        android:id="@+id/zipCodeLayout"
+
+
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+
+            android:text="@string/zipcode"/>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.4"
+            android:gravity="center_horizontal"
+            android:text=":"/>
+        <TextView
+            android:id="@+id/zipCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:layout_weight="0.25"
+            android:text=""/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimaryDark">
+    <ImageView
+        android:id="@+id/back_edit_profile"
+        android:layout_centerVertical="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/back" />
+    <TextView
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/editprofile"
+        android:textColor="#FFFFFF" />
+</RelativeLayout>
+    <EditText
+        android:id="@+id/firstName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectengleshape"
+        android:drawableLeft="@drawable/user2"
+        android:textColor="@color/green"
+        android:textColorHint="@color/caldroid_white"
+        android:hint="@string/first_name"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/lastname"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectengleshape"
+        android:drawableLeft="@drawable/user2"
+        android:textColor="@color/green"
+        android:layout_marginTop="5dp"
+        android:textColorHint="@color/caldroid_white"
+        android:hint="@string/last_name"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/emailID"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectengleshape"
+        android:drawableLeft="@drawable/email"
+        android:textColor="@color/green"
+        android:layout_marginTop="5dp"
+        android:textColorHint="@color/caldroid_white"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/edtphone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectengleshape"
+        android:drawableLeft="@drawable/phonec"
+        android:textColor="@color/green"
+        android:layout_marginTop="5dp"
+        android:textColorHint="@color/caldroid_white"
+        android:hint="@string/phone"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"/>
+    <EditText
+        android:id="@+id/address1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectengleshape"
+        android:drawableLeft="@drawable/map"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/green"
+        android:textColorHint="@color/caldroid_white"
+        android:hint="@string/address1"
+        android:padding="10dp"/>
+    <EditText
+        android:id="@+id/address2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectengleshape"
+        android:drawableLeft="@drawable/map"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/green"
+        android:textColorHint="@color/caldroid_white"
+        android:hint="@string/address_2"
+
+        android:padding="10dp"/>
+
+
+    <Spinner
+        android:id="@+id/spncountry"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:paddingLeft="40dp"
+        android:layout_margin="10dp"
+        android:background="@color/colorAccent" />
+
+
+    <Spinner
+        android:id="@+id/spncity"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:paddingLeft="40dp"
+        android:layout_margin="10dp"
+        android:background="@color/colorAccent"  />
+
+    <EditText
+        android:id="@+id/zipcode"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectengleshape"
+        android:drawableLeft="@drawable/phonec"
+        android:textColor="@color/green"
+        android:textColorHint="@color/caldroid_white"
+        android:layout_marginTop="5dp"
+        android:hint="@string/phone"
+        android:inputType="number"
+        android:padding="10dp"/>
+    <!--  </LinearLayout> -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnsignup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_weight="0.4"
+            android:layout_margin="5dp"
+            android:background="@drawable/green_button"
+            android:onClick="sign_up_click"
+            android:text="@string/submit" />
+
+        <Button
+            android:id="@+id/btncancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_margin="5dp"
+            android:layout_weight="0.4"
+            android:onClick="cancel_click"
+            android:background="@drawable/gray_button"
+            android:text="@string/cancel" />
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>

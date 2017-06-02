@@ -1,0 +1,175 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.infoservices.lue.fragments.MakePaymentFragment">
+    <TextView
+        android:id="@+id/pay_text_head"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textSize="17sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:text="PAYMENT DETAILS"
+        />
+    <LinearLayout
+        android:id="@+id/ll2_make_pay"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@color/colorPrimaryLight"
+        android:layout_below="@+id/pay_text_head"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:textStyle="normal"
+            android:textColor="@android:color/white"
+            android:text="Your invoice 225346658 for bill no. T2-9512-L2-E has been successfully placed ."
+            android:textSize="17dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textColor="@android:color/white"
+            android:text="PAYMENT STATUS : "
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:textColor="@color/green"
+            android:text="PENDING"
+            android:textSize="23dp"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textStyle="normal"
+            android:textColor="@android:color/white"
+            android:text="Proceed to make Payment"
+            android:gravity="left"
+            android:textSize="15dp"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textSize="17sp"
+        android:layout_below="@+id/ll2_make_pay"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:text="PAYMENT OPTIONS"
+        android:id="@+id/textbbhb" />
+<LinearLayout
+    android:id="@+id/ll_hjhjhg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryLight"
+    android:layout_below="@+id/textbbhb">
+    <RadioGroup
+        android:layout_width="0dp"
+        android:layout_weight=".1"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:checked="true"
+            android:buttonTint="@android:color/white"
+            android:id="@+id/creditcard" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:buttonTint="@android:color/white"
+            android:id="@+id/maybank" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:buttonTint="@android:color/white"
+            android:id="@+id/cimbclicks" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:buttonTint="@android:color/white"
+            android:id="@+id/otheronlinebank" />
+    </RadioGroup>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight=".3"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/mastercard2"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/maybank2u"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/climbclicks"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/otherbanking"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:paddingLeft="5dp"
+        android:layout_weight=".6"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Credit Card(Master Card/Visa)"
+            android:gravity="center"
+            android:textColor="@android:color/white"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Maybank2u"
+            android:textColor="@android:color/white"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="CimbClicks"
+            android:textColor="@android:color/white"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Other Online Banking"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+</LinearLayout>
+<Button
+    android:id="@+id/button_make_payment"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_below="@+id/ll_hjhjhg"
+    android:layout_margin="20dp"
+    android:background="@drawable/yellow_button"
+    android:text="Make Payment"/>
+</RelativeLayout>

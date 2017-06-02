@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+<TextView
+    android:id="@+id/heading_pre_res"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="15sp"
+    android:maxLength="36"
+    android:textStyle="bold"
+    android:padding="10dp"
+
+    android:text="Visiter Name"
+    android:textColor="@android:color/white"
+    />
+        <TextView
+            android:id="@+id/time_pre_res"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:text="10:25 to 10:65"
+            android:textColor="@android:color/white"
+            />
+        <TextView
+            android:id="@+id/date_pre_res"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:text="10/12/1988"
+            android:textColor="@android:color/white"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nifc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:text="Nifc no:- "
+        android:textColor="@android:color/holo_green_light"
+        />
+    <TextView
+        android:id="@+id/car_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:text="Car no:- "
+        android:textColor="@android:color/holo_green_light"
+        />
+    <TextView
+        android:id="@+id/text_passport_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:text="Passport no:- "
+        android:textColor="@android:color/holo_green_light"
+        />
+    <TextView
+        android:id="@+id/text_name_with_unit_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:padding="10dp"
+        android:text="Chandan Kumar Singh                  Unit no:- te2-cj-sfd"
+        android:textColor="@android:color/white"
+        />
+    <TextView
+        android:id="@+id/status_pre_res"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:gravity="right"
+        android:text="Approved"
+        android:textColor="@android:color/holo_red_light"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:padding="10dp"
+        android:background="@android:color/white"
+        />
+</LinearLayout>

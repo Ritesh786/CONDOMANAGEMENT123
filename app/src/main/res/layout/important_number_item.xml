@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+                android:background="@color/colorPrimaryLight"
+              android:layout_height="70dp">
+<TextView
+    android:id="@+id/text_contact_item"
+    android:layout_width="200dp"
+    android:layout_height="35dp"
+    android:textSize="17dp"
+    android:gravity="center_vertical"
+    android:text="Chandan"
+    android:textStyle="bold"
+    android:textColor="@android:color/white"
+    android:layout_marginLeft="20dp"
+    android:layout_alignParentLeft="true"/>
+    <TextView
+        android:id="@+id/text_designation"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:textSize="12dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_vertical"
+        android:text="Android Developer"
+        android:layout_below="@+id/text_contact_item"
+        android:textColor="@color/green"
+        android:layout_marginLeft="20dp"
+        />
+    <ImageView
+        android:id="@+id/call_button"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/black_button"
+        android:src="@drawable/ic_action_name"
+        />
+</RelativeLayout>

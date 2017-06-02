@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "7869269611",
+    "firebase_url": "https://condo-assist.firebaseio.com",
+    "project_id": "condo-assist",
+    "storage_bucket": "condo-assist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7869269611:android:0960a28eef9e7365",
+        "android_client_info": {
+          "package_name": "com.infoservices.lue.condomanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7869269611-1474ki2stchjhscblndt8qion115bosm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.infoservices.lue.condomanagement",
+            "certificate_hash": "e92355015af8a8f4de684a28ec4d59eb436ab2fa"
+          }
+        },
+        {
+          "client_id": "7869269611-erhjrb1jjdn5v4pbro0rhho4r8eh0nlm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7ihqLWQlYdggnWgABPJBFRluWZbvt4XI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7869269611-erhjrb1jjdn5v4pbro0rhho4r8eh0nlm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

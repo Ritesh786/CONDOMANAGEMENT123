@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.infoservices.lue.condomanagement.SignUpActivity">
+<include android:id="@+id/signup_header"
+    layout="@layout/header"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/condoassistapplogo"
+            android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Users not eligible for Signup !"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
+        android:textSize="23sp"
+        android:textStyle="bold"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_signup2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/green_button"
+        android:textColor="@android:color/black"
+        android:text="Sign Up"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spinner_signup"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/edit_unit_no"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="  unit no"
+            android:background="@drawable/rectengleshape"
+            android:drawableLeft="@drawable/user2"
+            android:paddingLeft="10dp"
+            android:paddingRight="50dp"
+            android:layout_marginTop="10dp"
+            android:singleLine="true"
+            android:textColor="@color/green"
+            android:textColorHint="@android:color/white"/>
+        <EditText
+            android:id="@+id/full_name2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="  full name"
+            android:background="@drawable/rectengleshape"
+            android:drawableLeft="@drawable/user2"
+            android:paddingLeft="10dp"
+            android:paddingRight="50dp"
+            android:layout_marginTop="10dp"
+            android:singleLine="true"
+            android:textColor="@color/green"
+            android:textColorHint="@android:color/white"/>
+        <EditText
+            android:id="@+id/user_name2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="  username"
+            android:background="@drawable/rectengleshape"
+            android:singleLine="true"
+            android:drawableLeft="@drawable/user2"
+            android:paddingLeft="10dp"
+            android:paddingRight="50dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/green"
+            android:textColorHint="@android:color/white"/>
+
+        <EditText
+            android:id="@+id/password2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:drawableLeft="@drawable/password2"
+            android:background="@drawable/rectengleshape"
+            android:hint=" password"
+            android:singleLine="true"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="50dp"
+            android:inputType="textPassword"
+            android:textColor="@color/green"
+            android:textColorHint="@android:color/white"/>
+
+        <EditText
+            android:id="@+id/user_email2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="  email"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/rectengleshape"
+            android:drawableLeft="@drawable/email"
+            android:singleLine="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="50dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/green"
+            android:textColorHint="@android:color/white"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/rectengleshape">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:layout_margin="3dp"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:text="+60"
+            android:id="@+id/textView4" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryLight"/>
+        <EditText
+            android:id="@+id/user_mobile2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="  enter new mobile"
+            android:inputType="number"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textColor="@color/green"
+            android:background="@drawable/rectanglenew"
+            android:textColorHint="@android:color/white"/>
+        </LinearLayout>
+        <EditText
+            android:id="@+id/user_address"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="  Address"
+            android:background="@drawable/rectengleshape"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:textColor="@color/green"
+            android:gravity="left"
+            android:textColorHint="@android:color/white"/>
+
+    </LinearLayout>
+</RelativeLayout>

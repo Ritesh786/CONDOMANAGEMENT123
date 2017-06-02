@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/signup"
+        android:textColor="#FFFFFF"
+         />
+    <EditText
+        android:id="@+id/edtname"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/caldroid_white"
+        android:layout_margin="10dp"
+        android:background="@drawable/rectangleshape_white"
+        android:drawableLeft="@drawable/user2"
+        android:hint="@string/names"
+        android:textColor="@color/green"
+        android:padding="10dp"
+        android:inputType="textEmailAddress" >
+    </EditText>
+    <EditText
+        android:id="@+id/edtpass"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangleshape_white"
+        android:drawableLeft="@drawable/password2"
+        android:textColor="@color/green"
+        android:textColorHint="@color/caldroid_white"
+        android:layout_margin="10dp"
+        android:hint="@string/pass"
+        android:padding="10dp"
+        android:inputType="textEmailAddress" >
+    </EditText>
+    <EditText
+        android:id="@+id/edtemail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangleshape_white"
+        android:textColor="@color/green"
+        android:drawableLeft="@drawable/email"
+        android:textColorHint="@color/caldroid_white"
+        android:layout_margin="10dp"
+        android:hint="@string/email"
+        android:padding="10dp"
+        android:inputType="textEmailAddress" >
+    </EditText>
+    <EditText
+        android:id="@+id/edtphone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangleshape_white"
+        android:textColor="@color/green"
+        android:drawableLeft="@drawable/phonec"
+        android:layout_margin="10dp"
+        android:textColorHint="@color/caldroid_white"
+        android:hint="@string/phone"
+        android:padding="10dp"
+        android:inputType="textEmailAddress" >
+    </EditText>
+    <!-- <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" /> -->
+
+    <Spinner
+        android:id="@+id/spncountry"
+        android:layout_width="fill_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+
+        android:background="@color/colorAccent" />
+    <!-- </LinearLayout>
+        <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" /> -->
+
+    <Spinner
+        android:id="@+id/spncity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:background="@color/colorAccent" />
+    <!--  </LinearLayout> -->
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox  android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@android:color/white"
+            android:id="@+id/chkterms"
+            />
+
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/caldroid_white"
+                android:text="@string/by_registering_you_agree_to_the"
+                android:layout_marginTop="8dp"/>
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/terms_of_service"
+                    android:textColor="#130FF7"
+                    android:id="@+id/txtterms"
+                    android:clickable="true"
+                    android:onClick="terms_click"
+                    />
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/and"
+                    android:textColor="@color/caldroid_white"
+                    android:layout_marginLeft="2dp"/>
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/privacy_policy_"
+                    android:textColor="#130FF7"
+                    android:layout_marginLeft="2dp"
+                    android:id="@+id/txtprivacy"
+                    android:clickable="true"
+                    android:onClick="privacy_click"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <CheckBox android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/caldroid_white"
+        android:buttonTint="@color/caldroid_white"
+        android:id="@+id/chkupdate"
+        android:text="@string/receive_updates_on_latest_promotion_or_deals_via_email_from_this_site"/>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/sign_up"
+            android:id="@+id/btnsignup"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/white_button"
+            android:clickable="true"
+            android:onClick="sign_up_click"/>
+        <Button android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/cancel"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/gray_button"
+            android:id="@+id/btncancel"
+            android:clickable="true"
+            android:onClick="cancel_click"/>
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>
