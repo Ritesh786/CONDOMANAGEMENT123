@@ -1,4 +1,4 @@
-package com.infoservices.lue.condomanagement;
+package com.infoservices.lue.condomanagement.ClassifAdvetisment;
 
 import android.util.Log;
 
@@ -31,6 +31,7 @@ public class StateId {
         if (jsonObject!=null){
             try {
                 this.id=jsonObject.getInt("id");
+                Log.d("id123", String.valueOf(jsonObject.getInt("id")));
             }catch (Exception e){}
             try {
                 this.name=jsonObject.getString("state_name");

@@ -251,7 +251,7 @@
     </string-array>
 
     <string-array name="category">
-    <item>Search By Category</item>
+        <item>Search By Category</item>
     </string-array>
     <string-array name="state">
         <item>Search By State</item>

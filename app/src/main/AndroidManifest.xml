@@ -191,6 +191,8 @@
         <activity
             android:name="com.infoservices.lue.dealAndDiscount.RedeemNowActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ClassifAdvetisment.AdsShow" />
+        <activity android:name=".ClassifAdvetisment.AdsDetailShow"></activity>
     </application>
 
 </manifest>

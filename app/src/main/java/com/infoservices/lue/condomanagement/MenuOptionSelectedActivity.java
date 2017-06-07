@@ -21,10 +21,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.infoservices.lue.condomanagement.ClassifAdvetisment.AdsFragment;
 import com.infoservices.lue.entity.FacilitiesEntity;
 import com.infoservices.lue.entity.NotificationEntity;
 import com.infoservices.lue.fragments.BullatineandNotices;
-import com.infoservices.lue.fragments.CommandAndSuggetionFragment;
 import com.infoservices.lue.fragments.EventCalender;
 import com.infoservices.lue.fragments.FacilitiesListFragment;
 import com.infoservices.lue.fragments.FaultReportFregment;

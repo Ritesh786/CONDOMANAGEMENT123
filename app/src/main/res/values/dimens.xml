@@ -72,4 +72,11 @@
     <dimen name="edit_portfolio_add_btn_hght">25dp</dimen>
     <dimen name="edit_portfolio_add_btn_width">25dp</dimen>
     <dimen name="min_height_for_editportfolio_subscreen_textbox">60dp</dimen>
+
+
+    <dimen name="title">17dp</dimen>
+    <dimen name="rating">15dip</dimen>
+    <dimen name="genre">13dip</dimen>
+    <dimen name="year">12dip</dimen>
+
 </resources>
