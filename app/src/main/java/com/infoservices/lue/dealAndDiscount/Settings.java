@@ -3,6 +3,7 @@ package com.infoservices.lue.dealAndDiscount;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -24,6 +25,8 @@ public class Settings extends Activity  {
 
         @Override
         public void onClick(View v) {
+
+
             switch (v.getId()) {
 
                 case R.id.imageViewleft:
@@ -44,7 +47,7 @@ public class Settings extends Activity  {
 
                     break;
 
-                case R.id.change_password: 
+                case R.id.change_password:
                     Intent intent2 = new Intent(getApplicationContext(), ChangePassword.class);
                     startActivity(intent2);
 
@@ -57,21 +60,23 @@ public class Settings extends Activity  {
 
                     break;
 
+                    case R.id.logout:
 
-                case R.id.logout:
+                          SharedPrefs.clear(Settings.this);
+                           Session session = new Session(Settings.this);
+                             session.clearAll();
+                                Intent logoutIntent = new Intent(Settings.this, LoginActivity.class);
 
-                    SharedPrefs.clear(Settings.this);
-                    Session session = new Session(Settings.this);
-                    session.clearAll();
-                    Intent logoutIntent = new Intent(Settings.this,Logindd.class);
+                                    startActivity(logoutIntent);
+                                              finish();
 
-                    startActivity(logoutIntent);
-                    finish();
-                    break;
+                        break;
 
-                default:
-                    break;
-            }
+                    default:
+                        break;
+                }
+
+
         }
     };
 

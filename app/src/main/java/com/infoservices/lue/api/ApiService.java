@@ -43,7 +43,7 @@ public class ApiService extends AsyncTask<String, String, String> {
 	// private final String DOMAIN = "http://demo6.know3.com/api/"; //Demo
 
 //private final String DOMAIN ="http://monzter.my/api/";
-private final String DOMAIN ="http://monzter2u.com/api/";
+private final String DOMAIN ="http://deal.condoassist2u.com/api/";
 
 
 

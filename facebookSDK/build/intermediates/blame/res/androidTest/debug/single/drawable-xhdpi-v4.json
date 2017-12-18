@@ -20,12 +20,12 @@
         "source": "E:\\CONDOMANAGEMENT\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_picker_magnifier.png"
     },
     {
-        "merged": "E:\\CONDOMANAGEMENT\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\com_facebook_inverse_icon.png",
-        "source": "E:\\CONDOMANAGEMENT\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_inverse_icon.png"
-    },
-    {
         "merged": "E:\\CONDOMANAGEMENT\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\com_facebook_tooltip_black_background.9.png",
         "source": "E:\\CONDOMANAGEMENT\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_black_background.9.png"
+    },
+    {
+        "merged": "E:\\CONDOMANAGEMENT\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\com_facebook_inverse_icon.png",
+        "source": "E:\\CONDOMANAGEMENT\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\com_facebook_inverse_icon.png"
     },
     {
         "merged": "E:\\CONDOMANAGEMENT\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\com_facebook_button_like_icon_selected.png",

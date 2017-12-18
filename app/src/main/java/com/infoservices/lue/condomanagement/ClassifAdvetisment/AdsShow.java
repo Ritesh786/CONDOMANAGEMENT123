@@ -28,6 +28,8 @@ public class AdsShow extends AppCompatActivity implements AdapterView.OnItemClic
     private AdsAdapter adapter;
     JSONArray array= null;
     List<pojo> movieList = new ArrayList<pojo>();
+    String imgurl;
+    List<String> imglst = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,45 +45,85 @@ public class AdsShow extends AppCompatActivity implements AdapterView.OnItemClic
         String jsonArray = intent.getStringExtra("mylist");
 
         try {
-             array = new JSONArray(jsonArray);
-            System.out.println(array.toString(2));
+            array = new JSONArray(jsonArray);
+            Log.d("jvju", "" + array);
+            //  System.out.println(array.toString(2));
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
         for (int i = 0; i < array.length(); i++) {
-
-
-            JSONObject obj = null;
             try {
-                obj = array.getJSONObject(i);
-                String imagestr = obj.getString("image");
-                String[] parts = imagestr.split(",");
-                String part1 = parts[0];
-                String part2 = parts[1];
+                JSONObject obj = array.getJSONObject(i);
+                JSONArray imagestr = obj.getJSONArray("image");
+                for (int z = 0; z < imagestr.length(); z++) {
 
-                String imagrurl = "http://api.condoassist2u.com/classified_ad/";
-                String imagrurl1 = imagrurl+part1;
-                String imagrurl2 = imagrurl+part2;
+                    String image = imagestr.getString(z);
+                    imglst.add(image);
+
+                }
+
+                Log.d("306060166",""+ imglst.toString());
 
                 pojo movie = new pojo();
                 movie.setTitle(obj.getString("description"));
-                movie.setThumbnailUrl(imagrurl1);
+                movie.setThumbnailUrl(imglst.get(0));
                 movie.setRating(obj.getString("state_name"));
 
                 movie.setYear(obj.getString("cat_name"));
-                movie.setGenre(obj.getString("area_name"));
-                movie.setImage2(imagrurl2);
-
+              //  movie.setGenre(obj.getString("area_name"));
+                movie.setImage2(imglst.toString());
                 movieList.add(movie);
-
+                imglst.clear();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
 
+
+       /* for (int i=0;i< array.length(); i++) {
+
+
+            JSONObject obj = null;
+            try {
+                obj = array.getJSONObject(i);
+                JSONArray imagestr = obj.getJSONArray("image");
+                for (int img = 0; img < imagestr.length(); img++) {
+
+                   // imglst.add(imagestr.get(i));
+                 //   String[] img_list = deal_img.split(",");
+                }
+           //     imglst.add(imgurl);
+                Log.d("306060166",""+ imglst.toString());
+
+//                String[] parts = imagestr.split(",");
+//                String part1 = parts[0];
+//                String part2 = parts[1];
+//
+//                String imagrurl = "http://api.condoassist2u.com/classified_ad/";
+//                String imagrurl1 = imagrurl+part1;
+//                String imagrurl2 = imagrurl+part2;
+
+                pojo movie = new pojo();
+                movie.setTitle(obj.getString("description"));
+                movie.setThumbnailUrl(imglst.get(0));
+                movie.setRating(obj.getString("state_name"));
+
+                movie.setYear(obj.getString("cat_name"));
+                movie.setGenre(obj.getString("area_name"));
+                movie.setImage2(imglst.get(1));
+
+
+                movieList.add(movie);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }*/
+
+
+
         }
-            Log.d("value1230", String.valueOf(movieList));
+
+            Log.d("value1230", String.valueOf(movieList.size()));
         adapter = new AdsAdapter(AdsShow.this, movieList);
         adapter.notifyDataSetChanged();
         mlistads.setAdapter(adapter);

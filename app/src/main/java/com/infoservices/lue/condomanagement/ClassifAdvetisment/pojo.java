@@ -14,15 +14,6 @@ public class pojo  implements Serializable {
     private String  genre;
     String image2;
 
-//    public pojo(String image2, String image3) {
-//        Image2 = image2;
-//        Image3 = image3;
-//    }
-
-
-
-
-
     public pojo() {
     }
 

@@ -251,10 +251,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             if (sharedPreferences.getString(VIBRATE,"").equals("yes") && sharedPreferences.getString(SOUND,"").equals("yes")){
                 soundandVibrateNotification();
             }else if (sharedPreferences.getString(VIBRATE,"").equals("yes")){
+
                 vibrateNotification();
             }
             else if (sharedPreferences.getString(SOUND,"").equals("yes")){
+
                 soundNotification();
+
             }else{
                 soundlessNotification();
             }

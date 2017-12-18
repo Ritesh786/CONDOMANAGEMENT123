@@ -195,4 +195,6 @@
         <activity android:name=".ClassifAdvetisment.AdsDetailShow"></activity>
     </application>
 
+
+
 </manifest>

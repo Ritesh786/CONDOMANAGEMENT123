@@ -58,6 +58,7 @@ public class MyCouponsDetailsActivity extends Activity{
 			String URL = "coupon_detail.html/?id=" + getIntent().getStringExtra("TRANSID");
 			new ApiService(MyCouponsDetailsActivity.this, this).execute(URL);
 			Log.v("", ""+URL);
+			Log.d("transid00","trsid11 "+getIntent().getStringExtra("TRANSID"));
 		}
 
 		@Override
@@ -104,8 +105,6 @@ public class MyCouponsDetailsActivity extends Activity{
 					coupon_phn.setText("Tel : "+Phone_number);
 					
 					if(barcode_image == ""){
-						
-						
 					}else{
 					ImageDownloader imagedownloader = new ImageDownloader();
 					imagedownloader.download(barcode_image, coupon_barcode_img);
@@ -117,11 +116,7 @@ public class MyCouponsDetailsActivity extends Activity{
 					}
 				}
 			} catch (Exception e) {}
-			
-			
+
 		}
-		
 	}
-
-
 }

@@ -2,6 +2,7 @@ package com.infoservices.lue.dealAndDiscount;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +17,7 @@ import com.infoservices.lue.session.Session;
 import com.infoservices.lue.util.SharedPrefs;
 
 import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,10 +58,16 @@ public class ChangePassword extends Activity implements ApiResponse {
                         edittext_newpassword.getText().toString().trim(),edittext_repetpassword.getText().toString().trim())){
                     Session session = new Session(ChangePassword.this);
                     final String USERID = session.getUSerId();
+                    final String oldpass = edittext_oldpassword.getText().toString().trim();
+                    final String passwo = edittext_newpassword.getText().toString().trim();
                     List<NameValuePair> nameValuePairs = new ArrayList<>(1);
-                    String URl = "change-password.html/?id=" + USERID+"&oldpassword="+edittext_oldpassword.getText()
+//                    nameValuePairs.add(new BasicNameValuePair("oldpassword", oldpass));
+//                    nameValuePairs.add(new BasicNameValuePair("password", passwo));
+                    String URl = "change-password/?id=" + USERID+"&oldpassword="+edittext_oldpassword.getText()
                             +"&password="+edittext_newpassword.getText();
                     new ApiService( ChangePassword.this, apiResponse, true, nameValuePairs).execute(URl);
+
+                    Log.d("param00", String.valueOf(nameValuePairs));
                 }
 
             }

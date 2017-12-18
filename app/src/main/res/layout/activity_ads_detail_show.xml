@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
-
         android:orientation="vertical"
         >
         <RelativeLayout
@@ -35,47 +34,62 @@
 
         </RelativeLayout>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:id="@+id/imageview1"/>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:id="@+id/imageview2"/>
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:id="@+id/imageview1"/>-->
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:id="@+id/imageview2"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/imageview1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="150dp"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:src="@drawable/hotel" />-->
+
+        <android.support.v4.view.ViewPager
+            android:scaleType="centerCrop"
+            android:id="@+id/imageview1"
+            android:layout_width="wrap_content"
+            android:layout_height="167dp"
+            android:layout_below="@+id/linearLayout3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
-            android:textSize="30dp"
-          android:gravity="center"
+            android:textSize="20dp"
+            android:gravity="center"
             android:id="@+id/description"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
             android:gravity="center"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:id="@+id/catgname"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
             android:gravity="center"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:id="@+id/statename"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:gravity="center"
-            android:textSize="30dp"
-            android:id="@+id/areaname"/>
-
-
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textColor="#ffffff"-->
+            <!--android:gravity="center"-->
+            <!--android:textSize="20dp"-->
+            <!--android:id="@+id/areaname"/>-->
 
         </LinearLayout>
+
     </ScrollView>

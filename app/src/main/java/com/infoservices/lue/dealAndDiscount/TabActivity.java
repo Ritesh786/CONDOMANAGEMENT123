@@ -22,7 +22,7 @@ public class TabActivity extends android.app.TabActivity{
 		setContentView(R.layout.tab_layout);
 
 		TabHost tabhost = getTabHost();
-		tabhost.getTabWidget().setBackgroundResource(R.drawable.tab_bg);
+	  tabhost.getTabWidget().setBackgroundResource(R.drawable.tab_bg);
 
 		TabSpec home_tab = tabhost.newTabSpec("HOME");
 		home_tab.setIndicator(createTabView(this, R.drawable.tab_home_selector));

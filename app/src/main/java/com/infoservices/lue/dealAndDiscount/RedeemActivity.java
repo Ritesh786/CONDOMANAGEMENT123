@@ -3,8 +3,11 @@ package com.infoservices.lue.dealAndDiscount;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,6 +27,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.infoservices.lue.adapters.AndroidImageAdapternew;
 import com.infoservices.lue.api.ApiService;
 import com.infoservices.lue.condomanagement.R;
 import com.infoservices.lue.interfaces.ApiResponse;
@@ -57,6 +61,11 @@ public class RedeemActivity extends FragmentActivity implements ApiResponse, OnM
 	private String mCredit = "0", limit, minlimit, remaindeal, reward;
 	Timer timer = new Timer();
 	boolean mapavailable = false;
+	private int page = 0;
+	AndroidImageAdapternew adapterView;
+	Handler handler1;
+	Runnable runnable;
+	private int delay = 1000;
 	//private SocialAuthAdapter social;
 	
 	private int nolimitstatus=0;
@@ -77,7 +86,7 @@ public class RedeemActivity extends FragmentActivity implements ApiResponse, OnM
 			/* * int requestCode = 10; Dialog dialog =
 			 * GooglePlayServicesUtil.getErrorDialog(status, this, requestCode);
 			 * dialog.show();*/
-
+			handler1=new Handler();
 			txtviewtermscondition=(TextView)findViewById(R.id.tterms);
 			txtviewdes = (TextView) findViewById(R.id.txtdes);
 			mDealTitle = (TextView) findViewById(R.id.deal_title);
@@ -123,6 +132,24 @@ public class RedeemActivity extends FragmentActivity implements ApiResponse, OnM
 				}
 			});
 
+//			mImgView.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//				@Override
+//				public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//					page = position;
+//				}
+//
+//				@Override
+//				public void onPageSelected(int position) {
+//
+//				}
+//
+//				@Override
+//				public void onPageScrollStateChanged(int state) {
+//
+//				}
+//			});
+
+
 			// String url = "deal-detail.html/?id=" + DEAL_ID;
 			// new ApiService(this, this).execute(url);
 		} else { // Google Play Services are available
@@ -131,6 +158,7 @@ public class RedeemActivity extends FragmentActivity implements ApiResponse, OnM
 					.findFragmentById(R.id.map);
 			fm.getMapAsync(RedeemActivity.this);
 			mapavailable = true;
+			handler1=new Handler();
 			txtviewdes = (TextView) findViewById(R.id.txtdes);
 			mDealTitle = (TextView) findViewById(R.id.deal_title);
 			txtviewterms = (TextView) findViewById(R.id.txtterms);
@@ -157,6 +185,23 @@ public class RedeemActivity extends FragmentActivity implements ApiResponse, OnM
 
 			// final String DEAL_ID = getIntent().getStringExtra("DEALID");
 			// final String DEAL_KEY = getIntent().getStringExtra("DEALKEY");
+
+//			mImgView.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//				@Override
+//				public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//					page = position;
+//				}
+//
+//				@Override
+//				public void onPageSelected(int position) {
+//
+//				}
+//
+//				@Override
+//				public void onPageScrollStateChanged(int state) {
+//
+//				}
+//			});
 
 			redeem_btn.setOnClickListener(new OnClickListener() {
 
@@ -216,6 +261,14 @@ public class RedeemActivity extends FragmentActivity implements ApiResponse, OnM
 			// new ApiService(this, this).execute(url);
 		}
 	}
+
+	@Override
+	public void onPause() {
+
+		super.onPause();
+		handler1.removeCallbacks(runnable);
+	}
+
 
 	public void descrip_click(View v) {
 		txtviewdes.setClickable(false);
@@ -402,28 +455,45 @@ try{
 				sharelink = jobj.getString("image_link");
 				String[] date = jobj.getString("enddate_format2").split(":");
 				final String DEAL_IMG = jobj.getString("image_src");
+				Log.d("imgsrc00",""+ jobj.getString("image_src"));
 				JSONArray img_ary = jobj.getJSONArray("deal_images");
 				// deal_multiple_img =
 				mDeal_url.add(DEAL_IMG);
 				int dealsize = img_ary.length();
-				if (img_ary != null && dealsize > 0) {
-					for (int i = 0; i < dealsize; i++) {
-						String deal_img = img_ary.get(i).toString();
+				Log.d("kbisidvi",""+dealsize);
 
-						  mDeal_url.add(
-						  "http://192.168.1.74:1008/images/deals/510_330/K1HhAmlw_2.png"
-						 ); mDeal_url.add(
-						 "http://192.168.1.74:1008/images/deals/510_330/K1HhAmlw_3.png"
-						 );
+				for (int i = 0; i < dealsize; i++) {
 
-
-						 String[] img_list = deal_img.split(",");
-						 if(img_list.length > 0 )
-						 mDeal_url.add(Arrays.toString(img_list));
-
-						mDeal_url.add(deal_img);
-					}
+					String imgurl = img_ary.get(i).toString();
+					Log.d("kbisidvi1230456520",""+imgurl);
+					mDeal_url.add(imgurl);
 				}
+
+				Log.d("bv bv vbv ",""+mDeal_url.toString());
+
+
+
+//				if (img_ary != null && dealsize > 0) {
+//					for (int i = 0; i < dealsize; i++) {
+//						String deal_img = img_ary.get(i).toString();
+//
+////						  mDeal_url.add(
+////						  "http://192.168.1.74:1008/images/deals/510_330/K1HhAmlw_2.png"
+////						 ); mDeal_url.add(
+////						 "http://192.168.1.74:1008/images/deals/510_330/K1HhAmlw_3.png"
+////						 );
+//
+//
+//						 String[] img_list = deal_img.split(",");
+//						 if(img_list.length > 0 )
+//						 mDeal_url.add(Arrays.toString(img_list));
+//
+//						mDeal_url.add(deal_img);
+//						//Log.d("kbisidvi1230456520",""+mDeal_url);
+//
+//					}
+//					Log.d("kbisidvi1230456520",""+mDeal_url);
+//				}
 				final String DEAL_DSCUNT = jobj.getString("discount");
 				final String DEAL_RWRDS = jobj.getString("rewards");
 				mCredit = jobj.getString("minimum_credit_value");
@@ -507,11 +577,11 @@ try{
 				timer.schedule(new firstTask(), 0, 1000);
 
 				//downloader.download(DEAL_IMG, mImgView);
-				Picasso.with(RedeemActivity.this)
-						.load(DEAL_IMG)
-						.placeholder(R.drawable.lobo2)   // optional
-						.error(R.drawable.lobo2)     // optional
-						.into(mImgView);
+//				Picasso.with(RedeemActivity.this)
+//						.load(DEAL_IMG)
+//						.placeholder(R.drawable.lobo2)   // optional
+//						.error(R.drawable.lobo2)     // optional
+//						.into(mImgView);
 				startSlideShow();
 
 			} catch (JSONException e) {
@@ -526,7 +596,7 @@ try{
 	int index = 0;
 
 	private void startSlideShow() {
-		// TODO Auto-generated method stub
+//		// TODO Auto-generated method stub
 		Timer timer = new Timer();
 		TimerTask task = new TimerTask() {
 
@@ -547,9 +617,10 @@ try{
 							//downloader.download(url, mImgView);
 							Picasso.with(RedeemActivity.this)
 									.load(url)
-									.placeholder(R.drawable.lobo2)   // optional
+								//	.placeholder(R.drawable.lobo2)   // optional
 									.error(R.drawable.lobo2)     // optional
 									.into(mImgView);
+
 						}
 					});
 				}
@@ -558,6 +629,7 @@ try{
 
 		if (mDeal_url.size() > 1)
 			timer.scheduleAtFixedRate(task, 3000, 3000);
+
 
 	}
 
@@ -611,6 +683,7 @@ try{
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
+		handler1.postDelayed(runnable, delay);
 		final String DEAL_ID = getIntent().getStringExtra("DEALID");
 		Session sess = new Session(getApplicationContext());
 		// final String DEAL_KEY = getIntent().getStringExtra("DEALKEY");
@@ -624,6 +697,7 @@ try{
 		/* * if(mcrdt_balTxt != null)
 		 * mcrdt_balTxt.setText(TabActivity.user_credits + " " +
 		 * getString(R.string.available_credits));*/
+
 
 	}
 }

@@ -52,19 +52,11 @@ public class AdsAdapter extends BaseAdapter {
         return position;
     }
 
-//    @Override
-//    public int getViewTypeCount() {
-//
-//        return getCount();
-//    }
-
     @Override
     public int getItemViewType(int position) {
 
         return position;
     }
-
-
 
     static class ViewHolder {
         ImageView thumbNail;
@@ -93,7 +85,7 @@ public class AdsAdapter extends BaseAdapter {
                     .findViewById(R.id.thumbnail);
             holder.title = (TextView) convertView.findViewById(R.id.title);
             holder.rating = (TextView) convertView.findViewById(R.id.rating);
-            holder.genre = (TextView) convertView.findViewById(R.id.genre);
+           // holder.genre = (TextView) convertView.findViewById(R.id.genre);
             holder.year = (TextView) convertView.findViewById(R.id.releaseYear);
 
             // getting movie data for the row
@@ -108,13 +100,12 @@ public class AdsAdapter extends BaseAdapter {
             }
             else
             {
-                holder.thumbNail.setVisibility(View.VISIBLE);//add this
-          //      holder.thumbNail.setImageResource(Integer.parseInt(movieItems.get(position).getThumbnailUrl()));
+                holder.thumbNail.setVisibility(View.VISIBLE);
 
             Picasso.with(context).load(movieItems.get(position).getThumbnailUrl()).resize(120, 60).into(holder.thumbNail);
 
                 String str = "rjbhai";
-                Log.d("rj123",str);
+                Log.d("rj123",""+movieItems.get(position).getThumbnailUrl());
             }
 
             // title
@@ -124,7 +115,7 @@ public class AdsAdapter extends BaseAdapter {
             holder.rating.setText("Search State: " + String.valueOf(m.getRating()));
 
             // genre
-            holder.genre.setText(m.getGenre());
+         //   holder.genre.setText(m.getGenre());
 
             // release year
             holder.year.setText(String.valueOf(m.getYear()));

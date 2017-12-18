@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -27,6 +30,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.infoservices.lue.condomanagement.R;
+import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -57,12 +61,17 @@ import java.util.List;
 public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
     Button msearchadsbtn;
-    Spinner msearccattxtspinner, msearchstatetxtspinner, msearchareatxtspinner;
+    Spinner  msearchstatetxtspinner, msearchareatxtspinner;
 
-    private ArrayList<String> category;
-    private ArrayList<StateId> state;
+    Spinner msearccattxtspinner;
+
+    private List<String> category;
+    private ArrayList<String> state;
     private ArrayList<String> area;
     int stateid2 = 0;
+    List<String> brString = new ArrayList<>();
+    List<String> brStringcitiid = new ArrayList<>();
+    String stid,cityid;
 
     SharedPreferences sharedPreferences;
     public static final String MyLoginPREFERENCES = "loginpreference";
@@ -90,29 +99,32 @@ public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedL
 
     private static final String TAG = AdsFragment.class.getSimpleName();
 
+    TextView msearchkeywordtxt;
+    ImageView msearchkeyimg;
 
-    // public static final String TAG_STATEID = "state_id";
 
 
     public AdsFragment() {
-        // Required empty public constructor
+
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_ads, container, false);
 
         category = new ArrayList<String>();
         category.add("Select By Category");
 
-        state = new ArrayList<StateId>();
+        state = new ArrayList<String>();
+
         //   state.add("Select By State");
 
         area = new ArrayList<String>();
-        //  area.add("Select By Area");
+        area.add("Select City");
+       //  area.add("Select By Area");
 
 
         stateid = new ArrayList<String>();
@@ -122,32 +134,31 @@ public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedL
 
         msearccattxtspinner = (Spinner) view.findViewById(R.id.searchcategory);
         msearchstatetxtspinner = (Spinner) view.findViewById(R.id.SearchState);
-        msearchareatxtspinner = (Spinner) view.findViewById(R.id.SearchArea);
+    //    msearchareatxtspinner = (Spinner) view.findViewById(R.id.SearchArea);
 
         msearccattxtspinner.setOnItemSelectedListener(this);
-        msearchareatxtspinner.setOnItemSelectedListener(this);
+    //    msearchareatxtspinner.setOnItemSelectedListener(this);
 
-//        msearchareatxtspinner.post(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//            }
-//        });
 
         msearchstatetxtspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                if (mLastSpinnerPosition == position) {
-                    return;
-                }
+//                if (mLastSpinnerPosition == position) {
+//                    return;
+//                }
+//
+//                mLastSpinnerPosition = position;
 
-                mLastSpinnerPosition = position;
 
+//                stateid2 = state.get(position).getId();
+//                Log.d("err1245", String.valueOf(state.get(position).getId()));
+//                new sendstatearea().execute();
 
-                stateid2 = state.get(position).getId();
-                Log.d("err1245", String.valueOf(state.get(position).getId()));
-                new sendstatearea().execute();
+                stid  =brString.get(position);
+                Log.d("sid00","stid "+stid);
+           //     new sendstatearea().execute();
+
 
             }
 
@@ -164,49 +175,26 @@ public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedL
         new getcategory().execute();
         getdatastate();
 
+        msearchkeywordtxt = (TextView) view.findViewById(R.id.skeyword_txt);
+        msearchkeyimg = (ImageView) view.findViewById(R.id.searchimg);
+        msearchkeyimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new searchkeyword().execute();
+
+            }
+        });
+
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, area);
+//        msearchareatxtspinner.setAdapter(adapter);
+//        adapter.notifyDataSetChanged();
 
 
         return view;
     }
 
 
-//    private void getData(){
-//        String str = "catv";
-//        Log.d("catvolley",str);
-//        StringRequest stringRequest = new StringRequest(DATA_URLCAT,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        JSONObject jobject = null;
-//                        try {
-//                            //Parsing the fetched Json String to JSON Object
-//                            jobject = new JSONObject(response);
-//
-//                            //Storing the Array of JSON String to our JSON Array
-//                            result = jobject.getJSONArray("info");
-//
-//                            //Calling method getStudents to get the students from the JSON Array
-//                            getcategory(result);
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//
-//                    }
-//                });
-//
-//        //Creating a request queue
-//        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-//
-//        //Adding request to the queue
-//        requestQueue.add(stringRequest);
-//
-//
-//    }
 
     private class getcategory extends AsyncTask<String, Void, String> {
         private ProgressDialog pDialog;
@@ -258,7 +246,7 @@ public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedL
             pDialog.dismiss();
 
 
-            Toast.makeText(getActivity(), "onpostwork.....", Toast.LENGTH_SHORT).show();
+      //      Toast.makeText(getActivity(), "onpostwork.....", Toast.LENGTH_SHORT).show();
 
             try {
                 JSONObject obj = new JSONObject(json);
@@ -304,13 +292,13 @@ public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedL
                     public void onResponse(String response) {
                         JSONObject jobject = null;
                         try {
-                            //Parsing the fetched Json String to JSON Object
+
                             jobject = new JSONObject(response);
 
-                            //Storing the Array of JSON String to our JSON Array
+
                             resultstate = jobject.getJSONArray("info");
 
-                            //Calling method getStudents to get the students from the JSON Array
+
                             getstate(resultstate);
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -324,17 +312,17 @@ public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedL
                     }
                 });
 
-        //Creating a request queue
+
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
 
-        //Adding request to the queue
+
         requestQueue.add(stringRequest);
 
 
     }
 
     private void getcategory(JSONArray j) {
-        //Traversing through all the items in the json array
+
         for (int i = 0; i < j.length(); i++) {
             try {
                 //Getting json object
@@ -347,30 +335,38 @@ public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedL
             }
         }
 
-        msearccattxtspinner.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, category));
+        msearccattxtspinner.setAdapter(new ArrayAdapter<>(getActivity(),android.R.layout.simple_spinner_dropdown_item,category));
 
     }
 
     private void getstate(JSONArray j) {
+
+        state.add("Select State");
+        brString.add("0");
         //Traversing through all the items in the json array
         for (int i = 0; i < j.length(); i++) {
             try {
-                //Getting json object
-//                JSONObject json = j.getJSONObject(i);
-                state.add(new StateId((JSONObject) j.get(i)));
+                JSONObject obj = j.getJSONObject(i);
+                state.add(obj.getString("state_name"));
+                brString.add(obj.getString("id"));
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
 
-        List<String> brString = new ArrayList<>();
-        // brString.add("Select By State");
-        for (StateId br : state) {
-            brString.add(String.valueOf(br.getName()));
-            Log.d("state123", String.valueOf(br.getName()));
+        int size = state.size();
+        String sList[] = new String[size];
+        for (int i = 0; i < size; i++) {
+            sList[i] = state.get(i);
         }
-        msearchstatetxtspinner.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, brString));
+
+      //   brString.add(""+"Select By State");
+//        for (StateId br : state) {
+//            brString.add(String.valueOf(br.getName()));
+//            Log.d("state123", String.valueOf(br.getName()));
+//        }
+        msearchstatetxtspinner.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, sList));
 
     }
 
@@ -378,17 +374,17 @@ public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedL
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-        Toast.makeText(getContext(), "working", Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(getContext(), "working", Toast.LENGTH_SHORT).show();
 
-        if (parent.getId() == R.id.SearchState) {
-
-            String str12 = "workhere";
-
-            msearchareatxtspinner.setSelection(position);
-            Log.d("err123", str12);
-
-
-        }
+//        if (parent.getId() == R.id.SearchState) {
+//
+//            String str12 = "workhere";
+//
+//            msearchareatxtspinner.setSelection(position);
+//            Log.d("err123", str12);
+//
+//
+//        }
 
     }
 
@@ -398,91 +394,88 @@ public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedL
     }
 
 
-    private class sendstatearea extends AsyncTask<String, Void, String> {
-        private ProgressDialog pDialog;
+//    private class sendstatearea extends AsyncTask<String, Void, String> {
+//        private ProgressDialog pDialog;
+//
+//
+//        @Override
+//        protected void onPreExecute() {
+//            super.onPreExecute();
+//            pDialog = new ProgressDialog(getContext());
+//            pDialog.setMessage("Getting Data ...");
+//            pDialog.setIndeterminate(false);
+//            pDialog.setCancelable(true);
+//            pDialog.show();
+//
+//        }
+//
+//        @Override
+//        protected String doInBackground(String... args) {
+//            String s = "";
+//
+//
+//            try {
+//                HttpClient httpClient = new DefaultHttpClient();
+//                HttpPost httpPost = new HttpPost(DATA_URLAREA);
+//                JSONObject jsonObject = new JSONObject();
+//                jsonObject.accumulate("state_id", stid);
+//                Log.d("er123", String.valueOf(stateid2));
+//
+//                StringEntity stringEntity = new StringEntity(jsonObject.toString());
+//                httpPost.setEntity(stringEntity);
+//                HttpResponse httpResponse = httpClient.execute(httpPost);
+//                HttpEntity httpEntity = httpResponse.getEntity();
+//                s = readResponse(httpResponse);
+//                Log.d("tag11", " " + s);
+//            } catch (Exception exception) {
+//                exception.printStackTrace();
+//            }
+//            return s;
+//
+//        }
+//
+//        protected void onProgressUpdate(Integer... progress) {
+//
+//        }
+//        @Override
+//        protected void onPostExecute(String json) {
+//            super.onPostExecute(json);
+//            Log.d("OnPOst", " " + json);
+//            pDialog.dismiss();
+//
+//
+//       //     Toast.makeText(getActivity(), "onpostwork.....", Toast.LENGTH_SHORT).show();
+//
+//            try {
+//                JSONObject obj = new JSONObject(json);
+//
+//                resultarea = obj.getJSONArray("info");
+//                getarea(resultarea);
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//
+//
+//        }
+//    }
 
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            pDialog = new ProgressDialog(getContext());
-            pDialog.setMessage("Getting Data ...");
-            pDialog.setIndeterminate(false);
-            pDialog.setCancelable(true);
-            pDialog.show();
-
-        }
-
-        @Override
-        protected String doInBackground(String... args) {
-            String s = "";
-
-
-            try {
-                HttpClient httpClient = new DefaultHttpClient();
-                HttpPost httpPost = new HttpPost(DATA_URLAREA);
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.accumulate("state_id", stateid2);
-                Log.d("er123", String.valueOf(stateid2));
-
-                StringEntity stringEntity = new StringEntity(jsonObject.toString());
-                httpPost.setEntity(stringEntity);
-                HttpResponse httpResponse = httpClient.execute(httpPost);
-                HttpEntity httpEntity = httpResponse.getEntity();
-                s = readResponse(httpResponse);
-                Log.d("tag11", " " + s);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-            return s;
-
-        }
-
-        protected void onProgressUpdate(Integer... progress) {
-
-        }
-        @Override
-        protected void onPostExecute(String json) {
-            super.onPostExecute(json);
-            Log.d("OnPOst", " " + json);
-            pDialog.dismiss();
-
-
-            Toast.makeText(getActivity(), "onpostwork.....", Toast.LENGTH_SHORT).show();
-
-            try {
-                JSONObject obj = new JSONObject(json);
-
-                resultarea = obj.getJSONArray("info");
-                getarea(resultarea);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-
-        }
-    }
-
-    private void getarea(JSONArray j) {
-        //Traversing through all the items in the json array
-        for (int i = 0; i < j.length(); i++) {
-            try {
-                //Getting json object
-                JSONObject json = j.getJSONObject(i);
-                area.add(json.getString("area_name"));
-                Log.d("json123", json.getString("area_name"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, area);
-        msearchareatxtspinner.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
-
-        //  msearchareatxtspinner.setAdapter(new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, area));
-
-        // new ArrayAdapter<String>().clear();
-    }
+//    private void getarea(JSONArray j) {
+//        //Traversing through all the items in the json array
+//        for (int i = 0; i < j.length(); i++) {
+//            try {
+//                //Getting json object
+//                JSONObject json = j.getJSONObject(i);
+//                area.add(json.getString("area_name"));
+//                Log.d("json123", json.getString("area_name"));
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, area);
+//        msearchareatxtspinner.setAdapter(adapter);
+//        adapter.notifyDataSetChanged();
+//
+//    }
 
     private String readResponse(HttpResponse httpResponse) {
 
@@ -511,7 +504,7 @@ public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedL
 
         String getcat = msearccattxtspinner.getSelectedItem().toString().trim();
         String getstate = msearchstatetxtspinner.getSelectedItem().toString().trim();
-        String getarea = msearchareatxtspinner.getSelectedItem().toString().trim();
+    //    String getarea = msearchareatxtspinner.getSelectedItem().toString().trim();
 
 
 
@@ -537,8 +530,8 @@ public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedL
                 JSONObject jsonObject = new JSONObject();
                 jsonObject.accumulate("mgnt_id", spr);
                 jsonObject.accumulate("cat_name", getcat);
-                jsonObject.accumulate("area_name", getarea);
-                Log.d("er12113",spr+getcat+getarea);
+                jsonObject.accumulate("state_name", getstate);
+                Log.d("er12113",spr+getcat+getstate);
 
                 StringEntity stringEntity = new StringEntity(jsonObject.toString());
                 httpPost.setEntity(stringEntity);
@@ -546,14 +539,14 @@ public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedL
                 HttpEntity httpEntity = httpResponse.getEntity();
                 s = readadsResponse(httpResponse);
                 Log.d("tag1", " " + s);
-            } catch (Exception exception) {
-                exception.printStackTrace();
+            } catch (Exception exception)
+            {
 
+                exception.printStackTrace();
                 Log.d("espone",exception.toString());
 
             }
             return s;
-
         }
         @Override
         protected void onPostExecute(String json) {
@@ -561,14 +554,25 @@ public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedL
             pDialog.dismiss();
             try {
                 JSONObject objone = new JSONObject(json);
-                getimage = objone.getJSONArray("msg");
 
+                int check  = objone.getInt("status");
+                if(check == 1) {
 
-                Intent showadintnt = new Intent(getContext(), AdsShow.class);
-                showadintnt.putExtra("mylist", getimage.toString());
-                Log.d("json000", String.valueOf(getimage));
-                startActivity(showadintnt);
+                    getimage = objone.getJSONArray("msg");
+                    Intent showadintnt = new Intent(getContext(), AdsShow.class);
+                    Log.d("valueinthis",""+getimage);
+                    showadintnt.putExtra("mylist", getimage.toString());
+                    Log.d("json000", String.valueOf(getimage));
+                    startActivity(showadintnt);
 
+                }else{
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setMessage("No Record Found")
+                            .setNegativeButton("ok", null)
+                            .create()
+                            .show();
+
+                }
 
                 Log.d("json007", String.valueOf(getimage));
             } catch (JSONException e) {
@@ -611,6 +615,85 @@ public class AdsFragment extends Fragment implements AdapterView.OnItemSelectedL
         new getadsdetail().execute();
 
 
+    }
+    class searchkeyword extends AsyncTask<String, Void, String> {
+        private ProgressDialog pDialog;
+
+        String searchkey = msearchkeywordtxt.getText().toString().trim();
+
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(getContext());
+            pDialog.setMessage("Please Wait ...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
+
+        }
+
+        @Override
+        protected String doInBackground(String... args) {
+            String s = "";
+
+
+            try {
+                HttpClient httpClient = new DefaultHttpClient();
+                HttpPost httpPost = new HttpPost("http://api.condoassist2u.com/search_classified_ad_keyword.php");
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.accumulate("keyword", searchkey);
+//                jsonObject.accumulate("cat_name", getcat);
+//                jsonObject.accumulate("area_name", getarea);
+          //      Log.d("er12113",spr+getcat+getarea);
+
+                StringEntity stringEntity = new StringEntity(jsonObject.toString());
+                httpPost.setEntity(stringEntity);
+                HttpResponse httpResponse = httpClient.execute(httpPost);
+                HttpEntity httpEntity = httpResponse.getEntity();
+                s = readadsResponse(httpResponse);
+                Log.d("tag1", " " + s);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+
+                Log.d("espone",exception.toString());
+
+            }
+
+            return s;
+
+        }
+        @Override
+        protected void onPostExecute(String json) {
+            super.onPostExecute(json);
+            pDialog.dismiss();
+            try {
+                JSONObject objone = new JSONObject(json);
+                int check  = objone.getInt("status");
+     if(check == 1) {
+             getimage = objone.getJSONArray("msg");
+            Intent showadintnt = new Intent(getContext(), AdsShow.class);
+            showadintnt.putExtra("mylist", getimage.toString());
+              Log.d("json000", String.valueOf(getimage));
+              startActivity(showadintnt);
+      }
+      else
+          {
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setMessage("No Record Found")
+            .setNegativeButton("ok", null)
+            .create()
+            .show();
+}
+
+                Log.d("json007", String.valueOf(getimage));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
